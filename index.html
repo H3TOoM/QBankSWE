@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Software Engineering</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🎓 Quiz Master</h1>
+                <p>Software Engineering Comprehensive Quiz Bank</p>
+            </div>
+        </header>
+
+        <!-- Quiz Container -->
+        <main class="quiz-container">
+            <!-- Start Screen -->
+            <div id="startScreen" class="screen active">
+                <div class="start-content">
+                    <h2>Welcome to the Quiz</h2>
+                    <div class="quiz-info">
+                        <div class="info-box">
+                            <span class="icon">📝</span>
+                            <div>
+                                <h3>100 Questions</h3>
+                                <p>Comprehensive and diverse questions</p>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <span class="icon">⏱️</span>
+                            <div>
+                                <h3>No Time Limit</h3>
+                                <p>Take your time and focus</p>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <span class="icon">✅</span>
+                            <div>
+                                <h3>Instant Feedback</h3>
+                                <p>See your answers instantly</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-large" onclick="startQuiz()">Start Quiz</button>
+                </div>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quizScreen" class="screen">
+                <div class="quiz-header">
+                    <div class="progress-info">
+                        <span id="questionNumber">Question 1 of 100</span>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <button class="btn-close" onclick="exitQuiz()">✕</button>
+                </div>
+
+                <div class="quiz-content">
+                    <div id="questionContainer" class="question-container">
+                        <!-- Questions will be inserted here -->
+                    </div>
+
+                    <div class="quiz-actions">
+                        <button id="prevBtn" class="btn btn-secondary" onclick="previousQuestion()">← Previous</button>
+                        <button id="submitBtn" class="btn btn-success" onclick="submitQuiz()">Submit Quiz</button>
+                        <button id="nextBtn" class="btn btn-secondary" onclick="nextQuestion()">Next →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="resultsScreen" class="screen">
+                <div class="results-content">
+                    <div class="score-display">
+                        <div id="scoreCircle" class="score-circle">
+                            <div class="score-text">
+                                <span id="scorePercentage" class="percentage">0%</span>
+                                <span class="label">Score</span>
+                            </div>
+                        </div>
+                        <div class="score-details">
+                            <h2>Your Results</h2>
+                            <p id="scoreMessage" class="score-message"></p>
+                            <div class="score-breakdown">
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">✅ Correct Answers</span>
+                                    <span id="correctCount" class="breakdown-value">0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">❌ Wrong Answers</span>
+                                    <span id="wrongCount" class="breakdown-value">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="reviewContainer" class="review-container">
+                        <!-- Review will be inserted here -->
+                    </div>
+
+                    <div class="results-actions">
+                        <button class="btn btn-primary" onclick="restartQuiz()">Retake Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
